@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativa de Telefonía - Ejercicio 5</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+
+<div class="app-background">
+    <div class="container">
+        <header class="main-header">
+            <div class="badge-tag">Comparador Inteligente</div>
+            <h1>Tarifas Telefónicas</h1>
+            <p>Introduce tu consumo trimestral y descubre al instante qué compañía te conviene más.</p>
+        </header>
+
+        <div class="tariffs-grid">
+            <div class="tariff-card card-a">
+                <div class="tariff-header">
+                    <h3>Empresa A</h3>
+                    <span class="price-tag">20€<span>/mes</span></span>
+                </div>
+                <ul class="tariff-features">
+                    <li><span>🌐</span> 10 GB de datos incluidos</li>
+                    <li><span>⏱️</span> 1.000 min gratis</li>
+                    <li><span>📞</span> Exceso: 0,08 €/min</li>
+                </ul>
+            </div>
+
+            <div class="tariff-card card-b">
+                <div class="tariff-header">
+                    <h3>Empresa B</h3>
+                    <span class="price-tag">10€<span>/mes</span></span>
+                </div>
+                <ul class="tariff-features">
+                    <li><span>🌐</span> 10 GB de datos incluidos</li>
+                    <li><span>⏱️</span> 500 min gratis</li>
+                    <li><span>📞</span> Exceso: 0,12 €/min</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <form id="tariffForm">
+                <h2>Introduce tu consumo estimado</h2>
+                <div class="months-container">
+                    <div class="month-column">
+                        <div class="month-title">Mes 1</div>
+                        <div class="input-group">
+                            <label for="min1">Minutos de llamadas</label>
+                            <input type="number" id="min1" min="0" required placeholder="Ej. 450">
+                        </div>
+                        <div class="input-group">
+                            <label for="data1">Datos de internet (GB)</label>
+                            <input type="number" id="data1" min="0" step="0.1" required placeholder="Ej. 10">
+                        </div>
+                    </div>
+
+                    <div class="month-column">
+                        <div class="month-title">Mes 2</div>
+                        <div class="input-group">
+                            <label for="min2">Minutos de llamadas</label>
+                            <input type="number" id="min2" min="0" required placeholder="Ej. 600">
+                        </div>
+                        <div class="input-group">
+                            <label for="data2">Datos de internet (GB)</label>
+                            <input type="number" id="data2" min="0" step="0.1" required placeholder="Ej. 10">
+                        </div>
+                    </div>
+
+                    <div class="month-column">
+                        <div class="month-title">Mes 3</div>
+                        <div class="input-group">
+                            <label for="min3">Minutos de llamadas</label>
+                            <input type="number" id="min3" min="0" required placeholder="Ej. 1200">
+                        </div>
+                        <div class="input-group">
+                            <label for="data3">Datos de internet (GB)</label>
+                            <input type="number" id="data3" min="0" step="0.1" required placeholder="Ej. 10">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-calculate">
+                    <span>Analizar y Obtener Veredicto</span>
+                </button>
+            </form>
+        </div>
+
+        <div id="results" class="results-card" style="display: none;">
+            <div class="results-header">
+                <h3>Resultados del Análisis</h3>
+            </div>
+            <div id="monthlyResultsContainer" class="monthly-results"></div>
+            <div id="globalSummaryContainer" class="summary-wrapper"></div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="./src/script.ts"></script>
+</body>
+</html>
